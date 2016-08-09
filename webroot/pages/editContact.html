@@ -1,0 +1,95 @@
+<div class="form-group">
+	<label for="givenName" class="col-md-2 abs-gray abs-md-full">Given Name</label>
+	<div class="col-md-10">
+		<input type="text" class="form-control" id="givenName" name="givenName" placeholder="" ng-model="contacts[selectedIndex].givenName" maxlength="35">
+	</div>
+</div>
+<div class="form-group">
+	<label for="surName" class="col-md-2 abs-gray abs-md-full">Surname</label>
+	<div class="col-md-10">
+		<input type="text" class="form-control" id="surName" name="surName" placeholder="" ng-model="contacts[selectedIndex].surName" maxlength="35">
+	</div>
+</div>
+<div class="form-group abs-animate-repeat" ng-repeat="phone in phones" ng-if="phone._action != 'delete'">
+	<label class="col-md-2 abs-gray abs-md-full" ng-click="gotoAnchor('phoneAnchor' + $index)">
+		<a href="" ng-click="fn_deletePhone($event, $index)">
+			<i class="fa fa-minus-circle abs-fixed-icon abs-left abs-red" aria-hidden="true"></i>
+		</a>
+		<div class="dropdown-wrapper abs-gray" uib-dropdown is-open="phone.isopen">
+			<div ng-click="fn_toggleDropdownPhone($event, phone)">
+				{{phone.phoneType}}
+				<a href="">
+					<i class="fa fa-caret-down abs-fixed-icon abs-right abs-gray" aria-hidden="true"></i>
+				</a>
+			</div>
+			<ul class="dropdown-menu" uib-dropdown-menu>
+				<li role="menuitem" ng-repeat="phoneType in phoneTypes" ng-click="fn_selectDropdownPhone(phone, phoneType)">
+					<a href="" ng-class="{ selected: phone.phoneType == phoneType }">{{phoneType}}</a>
+				</li>
+			</ul>
+		</div>
+	</label>
+	<div class="col-md-10">
+		{{phone.is_dropdown_open}}
+		<input id="phoneAnchor{{$index}}" type="text" class="form-control" name="phone" placeholder="" ng-model="phone.phoneNumber" maxlength="15" ng-keyup="fn_updatePhone($index)">
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-md-2 abs-gray abs-md-full" ng-click="fn_addPhone()">
+		<i class="fa fa-plus-circle abs-fixed-icon abs-left abs-green" aria-hidden="true"></i>
+		<i>Add new phone</i>
+	</label>
+	<div class="col-md-10">
+	</div>
+</div>
+<div class="form-group abs-animate-repeat" ng-repeat="address in addresses" ng-if="address._action != 'delete'">
+	<label class="col-md-2 abs-gray abs-md-full" ng-click="gotoAnchor('addressAnchor' + $index)">
+		<a href="" ng-click="fn_deleteAddress($event, $index)">
+			<i class="fa fa-minus-circle abs-fixed-icon abs-left abs-red" aria-hidden="true" ></i>
+		</a>
+		<div class="dropdown-wrapper abs-gray" uib-dropdown is-open="address.isopen">
+			<div ng-click="fn_toggleDropdownAddress($event, address)">
+				{{address.addressType}}
+				<a href="">
+					<i class="fa fa-caret-down abs-fixed-icon abs-right abs-gray" aria-hidden="true"></i>
+				</a>
+			</div>
+			<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="address-dropdown">
+				<li role="menuitem" ng-repeat="addressType in addressTypes" ng-click="fn_selectDropdownAddress(address, addressType)">
+					<a href="" ng-class="{ selected: address.addressType == addressType }">{{addressType}}</a>
+				</li>
+			</ul>
+			
+		</div>
+	</label>
+	<div class="col-md-10">
+		<div class="address-row">
+			<input id="addressAnchor{{$index}}" type="text" class="form-control" name="street" placeholder="" ng-model="address.street" maxlength="128" ng-keyup="fn_updateAddress($index)">
+			<p class="abs-gray">Street Address</p>
+		</div>
+		<div class="address-row">
+			<div class="address-row-content">
+				<input type="text" class="form-control" name="city" placeholder="" ng-model="address.city" maxlength="60" ng-keyup="fn_updateAddress($index)">
+				<p class="abs-gray">City</p>
+			</div>
+			<div class="address-row-side">
+				<div class="state pull-left">
+					<input type="text" class="form-control" name="state" placeholder="" ng-model="address.state" maxlength="35" ng-keyup="fn_updateAddress($index)">
+					<p class="abs-gray">State</p>
+				</div>
+				<div class="postalCode pull-right">
+					<input type="text" class="form-control" name="postalCode" placeholder="" ng-model="address.postalCode" numbers-only maxlength="11" ng-keyup="fn_updateAddress($index)">
+					<p class="abs-gray">Postal Code</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-md-2 abs-gray" ng-click="fn_addAddress()">
+		<i class="fa fa-plus-circle abs-fixed-icon abs-left abs-green" aria-hidden="true"></i>
+		<i>Add new address</i>
+	</label>
+	<div class="col-md-10">
+	</div>
+</div>

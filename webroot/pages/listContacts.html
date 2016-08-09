@@ -1,0 +1,22 @@
+<div class="content" ng-controller="ContactsController">
+	<aside class="sidebar">
+		<ul class="list-contact">
+			<li class="list-contact-item" ng-repeat="contact in contacts" ng-click="fn_selectContact($index)" ng-class="{ selected : $index == selectedIndex }">
+			
+				<i ng-if="!contact.givenName && !contact.surName">[No Name]</i>
+				<span ng-if="contact.givenName || contact.surName">{{contact.givenName}} {{contact.surName}}</span>
+			<li class="list-contact-item abs-gray" ng-click="fn_addContact()"><i class="fa fa-plus-circle abs-fixed-icon abs-green" aria-hidden="true"></i> <i>Add new contact</i></li>
+		</ul>
+	</aside>
+	<section class="main">
+		<div class="container-fluid">
+			<a class="abs-red pull-left" ng-if="mode == 'editmode' && (contacts.length > 1 || contacts[selectedIndex].contactID)" ng-click="fn_deleteContact()">Delete</a>
+			<a class="abs-blue pull-right" ng-if="mode == 'viewmode'" ng-click="fn_editContact()">Edit</a>
+			<a class="abs-blue pull-right" ng-if="mode == 'editmode'" ng-click="fn_doneContact()">Done</a>
+		</div>
+		<form class="form-horizontal form-contact" name="contactForm">
+			<div ng-include="'pages/editContact.html'" ng-if="mode == 'editmode'"></div>
+			<div ng-include="'pages/viewContact.html'" ng-if="mode == 'viewmode'" ng-style="fn_getAnimateStyle()"></div>
+		</form>
+	</section>
+</div>

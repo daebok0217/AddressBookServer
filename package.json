@@ -1,0 +1,12 @@
+{
+	"name": "AddressBookServer",
+	"version": "1.0.0",
+	"main": "AddressBookServer.js",
+	"dependencies": {
+		"express": "*",
+		"body-parser": "*",
+		"winston": "*",
+		"async": "*",
+		"uuid": "*"
+	}
+}

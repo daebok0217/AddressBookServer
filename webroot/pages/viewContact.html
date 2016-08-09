@@ -1,0 +1,29 @@
+<div class="form-group">
+	<label for="givenName" class="col-sm-2 abs-gray abs-md-full">Given Name</label>
+	<div class="col-sm-10">
+		<div class="abs-view-text">{{contacts[selectedIndex].givenName}}</div>
+	</div>
+</div>
+<div class="form-group">
+	<label for="surName" class="col-sm-2 abs-gray abs-md-full">Surname</label>
+	<div class="col-sm-10">
+		<div class="abs-view-text">{{contacts[selectedIndex].surName}}</div>
+	</div>
+</div>
+<div class="form-group" ng-repeat="phone in phones">
+	<label class="col-sm-2 abs-gray abs-md-full">
+		{{phone.phoneType}}
+	</label>
+	<div class="col-sm-10">
+		<div class="abs-view-text">{{phone.phoneNumber}}</div>
+	</div>
+</div>
+<div class="form-group" ng-repeat="address in addresses">
+	<label class="col-sm-2 abs-gray abs-md-full">
+		{{address.addressType}}
+	</label>
+	<div class="col-sm-10">
+		<div class="abs-view-text">{{address.street}}</div>
+		<div class="abs-view-text">{{address.city}}{{ (address.city && (address.state + ' ' + address.postalCode).trim() ? ', ' : '') + (address.state + ' ' + address.postalCode).trim() }}</div>
+	</div>
+</div>

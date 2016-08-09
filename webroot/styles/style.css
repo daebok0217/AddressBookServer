@@ -1,0 +1,229 @@
+/* loding spinner */
+#loading-bar-spinner{
+	width:100%;
+	height:100%;
+	background-color: rgba(255,255,255,0.5);
+	top:0px;
+	left:0px;
+	z-index: 10000;
+	position: fixed;
+	pointer-events:initial;
+}
+
+#loading-bar-spinner .spinner-icon{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/* modal : confirmation dialog */
+.modal .modal-dialog.modal-abs-md{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:412px;
+	margin:0;
+	-webkit-transform: translate(-50%, -50%); */
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.modal-abs-md .modal-body{
+	padding:30px;
+	font-size: 16px;
+}
+
+.modal-abs-md .modal-footer{
+	padding:0px 30px 30px 30px;
+	border-top:none;
+}
+
+.modal-abs-md .modal-title{
+	font-size: 24px;
+	text-align: center;
+}
+
+.modal-abs-md .abs-modal-button{
+	border:none;
+	border-radius: none;
+	background-color: transparent;
+}
+
+.modal-abs-md .abs-modal-button:hover{
+	text-decoration: underline;
+}
+
+/* animation effect by show and hide */
+.abs-animate-visible.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+.abs-animate-visible.ng-hide-remove {
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+/* layout : wrapper */
+.wrapper{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	padding:30px 20px;
+}
+
+/* layout : content */
+.wrapper > .content{
+	height:100%;
+	border:1px solid #85888D;
+	position: relative;
+}
+
+/* layout : sidebar */
+.wrapper > .content > .sidebar{
+	width: 220px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	overflow: hidden;
+	overflow-y: auto;
+	background-color: #DCDEE0;
+	border-right:1px solid #85888D;
+}
+
+/* sidebar : list-contact */
+.wrapper > .content > .sidebar .list-contact{
+	padding-left: 0;
+	margin-bottom: 0px;
+	font-size:16px;
+}
+
+.wrapper > .content > .sidebar .list-contact-item{
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-bottom:1px solid #85888D;
+	cursor: pointer;
+}
+
+.wrapper > .content > .sidebar .list-contact-item.selected{
+	color:#164F86;
+	font-weight: bold;
+}
+
+/* content main */
+.wrapper > .content > .main{
+	height:100%;
+	padding-left:220px;
+	overflow: hidden;
+	overflow-y: auto;
+	line-height: 34px;
+	position: relative;
+}
+
+/* content form */
+.wrapper > .content > .main .form-contact{
+	padding:0 60px;
+	width:100%;	
+}
+
+/* content form : view mode text for diplaying same padding with input when the mode is changed*/
+.abs-view-text{
+	padding: 0px 12px;
+}
+
+/* content form : input animation */
+.wrapper > .content > .main .form-contact .form-control{
+	-webkit-animation:2s shadow;
+  	animation:2s shadow;
+}
+
+/* content form : address input description */
+.wrapper > .content > .main .form-contact p{
+	margin:0;
+	line-height: 24px;
+}
+
+/* content form : delete or arrow icon of address or phone  */
+.wrapper > .content > .main .form-contact .abs-fixed-icon{
+	position: absolute;
+	font-size:20px;
+	top:7px;
+}
+
+.wrapper > .content > .main .form-contact .abs-fixed-icon.abs-left{
+	left:-10px;
+}
+
+.wrapper > .content > .main .form-contact .abs-fixed-icon.abs-right{
+	right:0px;
+}
+
+/* content form : dropdown menu of address or phone  */
+.wrapper > .content > .main .form-contact .dropdown-wrapper{
+	margin-right:-15px;
+	cursor: pointer;
+}
+
+.wrapper > .content > .main .form-contact .dropdown-menu{
+	top:0px;
+	border-radius:0px;
+	box-shadow: none;
+	border-color:#85888D;
+	width:100%;
+	min-width: initial;
+	line-height: 34px;
+	padding: 0px;
+}
+
+.wrapper > .content > .main .form-contact .dropdown-menu>li{
+	border-top:1px solid #85888D;
+}
+
+.wrapper > .content > .main .form-contact .dropdown-menu>li:first-child{
+	border-top:none;
+}
+
+.wrapper > .content > .main .form-contact .dropdown-menu>li>a {
+	padding: 3px 3px;
+}
+
+.wrapper > .content > .main .form-contact .dropdown-menu>li>a.selected, .wrapper > .content > .main .form-contact .dropdown-menu>li>a:hover {
+	background-color: #DCDEE0;
+}
+
+/* content form : address row */
+.wrapper > .content > .main .form-contact .address-row{
+	width:100%;
+	position: relative;
+}
+
+.wrapper > .content > .main .form-contact .address-row .address-row-content{
+	width:100%;
+	padding-right:320px;
+}
+
+.wrapper > .content > .main .form-contact .address-row .address-row-side{
+	position: absolute;
+	width:300px;
+	top:0px;
+	right:0px;
+}
+
+.wrapper > .content > .main .form-contact .address-row .address-row-side .state{
+	width:90px;
+}
+
+.wrapper > .content > .main .form-contact .address-row .address-row-side .postalCode{
+	width:190px;
+}

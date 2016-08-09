@@ -1,0 +1,4 @@
+{
+	"phoneTypes": ["Home Phone", "Mobile Phone"],
+	"addressTypes": ["Home Address", "Mailing Address", "Office Address", "Work Address", "Other Address"]
+}

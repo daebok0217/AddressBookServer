@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="addressbook">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="AddressBookServer">
+	<meta name="keyword" content="AddressBookServer">
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1970 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<title>AddressBookServer</title>
+	<!-- style references -->
+	<link href="styles/bootstrap.min.css" rel="stylesheet">
+	<link href="styles/font-awesome.min.css" rel="stylesheet">
+	<link href='styles/toaster.min.css' rel='stylesheet' />
+	<link href='styles/loading-bar.css' rel='stylesheet' />
+	<!-- style common -->
+	<link href="styles/main.css" rel="stylesheet">
+	<!-- style pages -->
+	<link href="styles/style.css" rel="stylesheet">
+
+	<!-- script references -->
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/ui-bootstrap-tpls-2.0.1.min.js"></script>
+	<script src="scripts/angular-route.min.js"></script>
+	<script src="scripts/angular-animate.min.js"></script>
+	<script src="scripts/toaster.min.js"></script>
+	<script src="scripts/loading-bar.js"></script>
+	<!-- anguar app -->
+	<script src="scripts/app.js"></script>
+	<!-- angular services -->
+	<script src="services/APIFactory.js"></script>
+	<!-- angular controllers -->
+	<script src="controllers/ContactsController.js"></script>
+	<script src="controllers/ModalConfirmController.js"></script>
+</head>
+<body>
+	<toaster-container toaster-options="{'position-class': 'toast-top-center'}"></toaster-container>
+	<div class="wrapper" ng-view></div>
+</body>
+</html>
